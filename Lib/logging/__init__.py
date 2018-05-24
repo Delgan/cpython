@@ -1857,7 +1857,7 @@ def basicConfig(**kwargs):
                 raise ValueError('Style must be one of: %s' % ','.join(
                                  _STYLES.keys()))
             fs = kwargs.pop("format", _STYLES[style][1])
-            fmt = Formatter(fs, dfs, style)
+            fmt = _defaultFormatter(fs, dfs, style)
             for h in handlers:
                 if h.formatter is None:
                     h.setFormatter(fmt)
